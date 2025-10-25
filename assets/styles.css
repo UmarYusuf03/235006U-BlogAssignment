@@ -1,0 +1,143 @@
+:root {
+  --max: 1000px;
+  --accent: #103d22;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: #222;
+}
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 20px;
+}
+.site-header {
+  background: #8aa8bc;
+  border-bottom: 1px solid #3a5270;
+}
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--accent);
+}
+nav a {
+  margin-left: 12px;
+  text-decoration: none;
+  color: #333;
+}
+nav a:hover{
+  text-decoration: underline;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.post-card {
+  padding: 16px;
+  border: 1px solid #34924a;
+  border-radius: 8px;
+  background: #70c465;
+}
+.post-card h2 {
+  margin: 0 0 8px;
+}
+.meta {
+  font-size: 0.9em;
+  color: #45955a;
+}
+.excerpt {
+  color: #22462b;
+}
+.read-more {
+  display: inline-block;
+  margin-top: 8px;
+}
+.form label {
+  display: block;
+  margin-bottom: 10px;
+}
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bad3f1;
+  border-radius: 6px;
+}
+.button,
+button {
+  background: var(--accent);
+  color: #cdc2c2;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.md-preview {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 1px dashed #70c465;
+  border-radius: 6px;
+  background: #70c465;
+}
+.site-footer {
+  width: 100%;
+  background: #8aa8bc;
+  border-top: 1px solid #7fa4d4;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.errors {
+  background: #ffe9e9;
+  padding: 10px;
+  border: 1px solid #f5c2c2;
+  border-radius: 6px;
+  color: #7b0a0a;
+}
+.single-post .content {
+  padding: 12px;
+  border: 1px solid #e6eef8;
+  border-radius: 6px;
+  margin-top: 12px;
+  background: #70c465;
+}
+.actions {
+  margin-top: 12px;
+}
+.btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  margin-right: 8px;
+}
+.btn.danger {
+  background: #f87171;
+  color: #fff;
+  border: none;
+}
+@media (max-width: 600px) {
+  .site-header .container {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .posts {
+    grid-template-columns: 1fr;
+  }
+}
