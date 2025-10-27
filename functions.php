@@ -23,7 +23,7 @@ function findUserById($id)
 function getAllPosts()
 {
     global $pdo;
-    $stmt = $pdo->query('SELECT p.*, u.username FROM blogPost p JOIN user u ON p.user_id = u.id ORDER BY p.created_at DESC');
+    $stmt = $pdo->query('SELECT p.*, u.username FROM blogpost p JOIN user u ON p.user_id = u.id ORDER BY p.created_at DESC');
     return $stmt->fetchAll();
 }
 
@@ -31,7 +31,7 @@ function getAllPosts()
 function getPost($id)
 {
     global $pdo;
-    $stmt = $pdo->prepare('SELECT p.*, u.username FROM blogPost p JOIN user u ON p.user_id = u.id WHERE p.id = ?');
+    $stmt = $pdo->prepare('SELECT p.*, u.username FROM blogpost p JOIN user u ON p.user_id = u.id WHERE p.id = ?');
     $stmt->execute([$id]);
     return $stmt->fetch();
 }
@@ -40,7 +40,7 @@ function getPost($id)
 function createPost($user_id, $title, $content)
 {
     global $pdo;
-    $stmt = $pdo->prepare('INSERT INTO blogPost (user_id, title, content) VALUES (?, ?, ?)');
+    $stmt = $pdo->prepare('INSERT INTO blogpost (user_id, title, content) VALUES (?, ?, ?)');
     return $stmt->execute([$user_id, $title, $content]);
 }
 
@@ -48,7 +48,7 @@ function createPost($user_id, $title, $content)
 function updatePost($id, $title, $content)
 {
     global $pdo;
-    $stmt = $pdo->prepare('UPDATE blogPost SET title = ?, content = ? WHERE id = ?');
+    $stmt = $pdo->prepare('UPDATE blogpost SET title = ?, content = ? WHERE id = ?');
     return $stmt->execute([$title, $content, $id]);
 }
 
@@ -56,6 +56,6 @@ function updatePost($id, $title, $content)
 function deletePost($id)
 {
     global $pdo;
-    $stmt = $pdo->prepare('DELETE FROM blogPost WHERE id = ?');
+    $stmt = $pdo->prepare('DELETE FROM blogpost WHERE id = ?');
     return $stmt->execute([$id]);
 }
