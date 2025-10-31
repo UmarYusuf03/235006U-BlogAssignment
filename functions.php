@@ -59,3 +59,20 @@ function deletePost($id)
     $stmt = $pdo->prepare('DELETE FROM blogpost WHERE id = ?');
     return $stmt->execute([$id]);
 }
+
+
+// Search posts by title or content
+function searchPosts($term)
+{
+    global $pdo;
+    $like = '%' . $term . '%';
+    $stmt = $pdo->prepare('
+        SELECT p.*, u.username 
+        FROM blogPost p 
+        JOIN user u ON p.user_id = u.id 
+        WHERE p.title LIKE ? OR p.content LIKE ?
+        ORDER BY p.created_at DESC
+    ');
+    $stmt->execute([$like, $like]);
+    return $stmt->fetchAll();
+}

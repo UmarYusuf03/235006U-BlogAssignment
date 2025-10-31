@@ -173,6 +173,30 @@ button {
   color: #fff;
   border: none;
 }
+
+form.searchBar input[type="text"] {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  
+}
+
+form.searchBar button {
+  background-color: #19183B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+form.searchBar button:hover {
+  background-color: #2d2b63;
+}
+
+
+
+
+
 @media (max-width: 600px) {
   .site-header .container {
     flex-direction: column;
