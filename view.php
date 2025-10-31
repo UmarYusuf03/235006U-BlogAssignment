@@ -42,7 +42,7 @@ include './header.php';
   <?php if (isLoggedIn() && currentUserId() == $post['user_id']): ?>
     <div class="actions">
       <!-- Edit button -->
-      <a class="btn" href="edit.php?id=<?php echo $post['id']; ?>">Edit</a>
+      <a class="btn" href="edit.php?id=<?php echo $post['id']; ?>" style="color: black">Edit</a>
 
       <!-- Delete button with confirmation popup -->
       <a class="btn danger" href="delete.php?id=<?php echo $post['id']; ?>"

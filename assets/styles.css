@@ -1,28 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
   --max: 1000px;
-  --accent: #103d22;
+  --accent: #227644;
 }
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+
+
+
 body {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   margin: 0;
   color: #222;
 }
 .container {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 20px;
+  padding: 8px;
 }
+
+.container a{
+  color: white;
+}
+
+.container a img{
+  height: 60px;
+  width: 60px;
+  border-radius: 12px;
+}
+
 .site-header {
-  background: #8aa8bc;
+  background: #19183B;
+  color: white;
   border-bottom: 1px solid #3a5270;
 }
 .site-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
 }
 .brand {
   font-weight: 700;
@@ -32,7 +53,7 @@ body {
 nav a {
   margin-left: 12px;
   text-decoration: none;
-  color: #333;
+  color: white;
 }
 nav a:hover{
   text-decoration: underline;
@@ -43,13 +64,21 @@ nav a:hover{
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
   margin-top: 20px;
+  margin-bottom: 70px;
 }
 .post-card {
   padding: 16px;
-  border: 1px solid #34924a;
+  border: 1px solid #5a88b8;
   border-radius: 8px;
-  background: #70c465;
+  background: #A1C2BD;
+  color: black;
+}  
+
+.content{
+  height: 400px;
+  overflow-y: auto;
 }
+
 .post-card h2 {
   margin: 0 0 8px;
 }
@@ -78,23 +107,31 @@ nav a:hover{
 .button,
 button {
   background: var(--accent);
-  color: #cdc2c2;
+  color: #f8f1f1;
   border: none;
   padding: 10px 14px;
   border-radius: 6px;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 .md-preview {
   margin-top: 10px;
   margin-bottom: 5px;
   padding: 10px;
-  border: 1px dashed #70c465;
+  border: 1px dashed #5a88b8;
   border-radius: 6px;
-  background: #70c465;
+  background: #A1C2BD;
+  color: black;
 }
+
+#preview{
+  height: 100px;
+  overflow-y: auto;
+}
+
 .site-footer {
   width: 100%;
-  background: #8aa8bc;
+  background: #222;
   border-top: 1px solid #7fa4d4;
   padding: 10px;
   margin-top: 20px;
@@ -102,6 +139,8 @@ button {
   position: fixed;
   bottom: 0;
   left: 0;
+  color: white;
+  height: 50px;
 }
 .errors {
   background: #ffe9e9;
@@ -115,7 +154,8 @@ button {
   border: 1px solid #e6eef8;
   border-radius: 6px;
   margin-top: 12px;
-  background: #70c465;
+  background: #A1C2BD;
+  color: black;
 }
 .actions {
   margin-top: 12px;
@@ -126,6 +166,7 @@ button {
   text-decoration: none;
   border: 1px solid #ddd;
   margin-right: 8px;
+  color: black;
 }
 .btn.danger {
   background: #f87171;

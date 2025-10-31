@@ -1,6 +1,6 @@
-<?php 
+<?php
 //Include configuration file 
-require_once './config.php'; 
+require_once './config.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,13 +14,13 @@ require_once './config.php';
 </head>
 
 <body>
-    
+
     <header class="site-header">
         <div class="container">
-            
-            <a class="brand" href="/index.php">IN2120 Blog</a>
 
-            
+            <a class="brand" href="./index.php"><img src="./assets/logo.png" /></a>
+
+
             <nav>
                 <a href="./index.php">Home</a>
 

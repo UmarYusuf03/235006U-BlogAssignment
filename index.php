@@ -9,6 +9,7 @@ $posts = getAllPosts();
 include './header.php';
 ?>
 
+<h2>Search Blogs</h2>
 
 <h1>Latest Blogs</h1>
 
@@ -18,20 +19,20 @@ include './header.php';
     <?php if (empty($posts)): ?>
         <p>
             No posts yet.
-            
+
             <?php if (isLoggedIn()) echo '<a href="./create.php">Create the first post</a>.'; ?>
         </p>
 
-    <!-- If there are blog posts -->
+        <!-- If there are blog posts -->
     <?php else: ?>
 
         <!-- Loop through all posts -->
         <?php foreach ($posts as $p): ?>
             <article class="post-card">
-                
-                
+
+
                 <h2>
-                    <a href="./view.php?id=<?php echo $p['id']; ?>">
+                    <a href="./view.php?id=<?php echo $p['id']; ?>" style="color: #19183B">
                         <?php echo $p['title']; ?>
                     </a>
                 </h2>
@@ -44,7 +45,7 @@ include './header.php';
                     <?php echo substr(strip_tags($p['content']), 0, 200); ?>...
                 </p>
 
-                <a class="read-more" href="./view.php?id=<?php echo $p['id']; ?>">Read</a>
+                <a class="read-more" href="./view.php?id=<?php echo $p['id']; ?>" style="color: #4a6c67ff;">Read</a>
             </article>
         <?php endforeach; ?>
 

@@ -6,7 +6,7 @@ require_once './functions.php';
 // If not, redirect to login page
 if (!isLoggedIn()) {
     header('Location: ./login.php');
-    exit; 
+    exit;
 }
 
 // Get post ID from URL
@@ -64,7 +64,7 @@ include 'header.php';
 <h1>Edit Post</h1>
 
 <!--Show error messages if there are validation issues -->
-<?php 
+<?php
 if ($errors) {
     echo '<div class="errors">' . implode('<br>', $errors) . '</div>';
 }
@@ -77,7 +77,7 @@ if ($errors) {
     </label>
 
     <label>Content
-        <textarea name="content" id="md-input" rows="12" required><?php echo $post['content']; ?></textarea>
+        <textarea name="content" id="md-input" rows="8" required><?php echo $post['content']; ?></textarea>
     </label>
 
     <div class="md-preview">
@@ -101,7 +101,7 @@ if ($errors) {
     renderE();
 </script>
 
-<?php 
+<?php
 // Include footer layout
-include 'footer.php'; 
+include 'footer.php';
 ?>

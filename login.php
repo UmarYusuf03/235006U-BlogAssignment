@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Check if the user exists AND if the password matches
     if (!$user || !password_verify($password, $user['password'])) {
-        
+
         $errors[] = 'Invalid credentials.';
     } else {
         unset($user['password']);
@@ -38,9 +38,9 @@ include './header.php';
 <h1>Login</h1>
 
 
-<?php 
+<?php
 if ($errors) {
-    echo '<div class="errors">' . implode('<br>', array_map('h', $errors)) . '</div>';
+    echo '<div class="errors">' . implode('<br>', $errors) . '</div>';
 }
 ?>
 

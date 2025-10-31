@@ -6,7 +6,7 @@ require_once './functions.php';
 // If not logged in, redirect to login page 
 if (!isLoggedIn()) {
     header('Location: ./login.php');
-    exit; 
+    exit;
 }
 
 // Initialize an array to hold form validation errors
@@ -42,7 +42,7 @@ include './header.php';
 <h1>New Post</h1>
 
 <!--Show error messages -->
-<?php 
+<?php
 if ($errors) {
     echo '<div class="errors">' . implode('<br>', $errors) . '</div>';
 }
@@ -57,7 +57,7 @@ if ($errors) {
 
     <!-- Content textarea -->
     <label>Content
-        <textarea name="content" id="md-input" rows="12" required></textarea>
+        <textarea name="content" id="md-input" rows="5" required></textarea>
     </label>
 
     <!-- Markdown live preview area -->
@@ -88,7 +88,7 @@ if ($errors) {
     render();
 </script>
 
-<?php 
+<?php
 // Include footer layout
-include 'footer.php'; 
+include 'footer.php';
 ?>
